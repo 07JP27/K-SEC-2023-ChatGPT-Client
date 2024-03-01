@@ -14,7 +14,7 @@ def chat():
     #サイドバーに説明を表示する。
     st.sidebar.header("設定画面")
 
-    st.sidebar.selectbox("Model", ("gpt-35-A","gpt-35-B","gpt-35-C","gpt-35-D","gpt-35-E","gpt-35-F","gpt-35-G","gpt-35-H","gpt-35-I","gpt-35-J","gpt-35-K","gpt-35-L","gpt-35-M","gpt-35-M","gpt-35-N","gpt-35-Spare"), key="deployment")
+    st.sidebar.selectbox("Model", ("gpt-35-A","gpt-35-B","gpt-35-C","gpt-35-D","gpt-35-E","gpt-35-F","gpt-35-G","gpt-35-H","gpt-35-I","gpt-35-J","gpt-35-K","gpt-35-L","gpt-35-M","gpt-35-N","gpt-35-Spare"), key="deployment")
     st.sidebar.text_area("System Prompt", value="You are an AI chatbot having a conversation with a human.",key="system_prompt")
     if st.sidebar.button('Set system Prompt',  use_container_width=True):
         st.session_state.messages = [{"role":"system", "content":st.session_state.system_prompt}]

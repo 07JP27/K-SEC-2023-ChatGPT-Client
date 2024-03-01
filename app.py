@@ -15,7 +15,7 @@ def validate_login():
 def authenticate():
   if "authenticated" not in st.session_state:
     st.text_input(label="Username", value="", key="user")
-    st.text_input(label="Password", value="", key="password")
+    st.text_input(label="Password", value="", key="password", type="password")
     st.button(label="ログイン", on_click=validate_login)
     return False
   else:

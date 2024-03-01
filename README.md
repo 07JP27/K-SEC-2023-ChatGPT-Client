@@ -1,26 +1,46 @@
-[API Key Version is here](https://github.com/07JP27/openai-client/tree/main)
+# K-SEC-2023-ChatGPT-Client
 
-# Simple ChatGPT client
-It is a Python application that serves as the frontend for Azure Open AI's ChatGPT.
-It is assumed to be deployed on Azure App Service.
+![image](/assets/overview.png)
 
-![image](https://github.com/07JP27/openai-client/assets/11060273/39fe32fd-3046-431a-8d39-36d64130faa8)
+## Local degug
+### 1. Prerequisites
+- Install Python 3
+- Clone this repository
 
-# 1. Deploy App Service
+### 2. Install required packages
+run following command in your terminal.
+```
+pip install -r requirements.txt
+```
+### 3. Set environment variables
+```
+export USER_NAME={Your username}
+export USER_PASS={Your passphrase}
+export OPENAI_API_ENDPOINT={Your Azure OpenAI API endpoint URL}
+export OPENAI_API_VERSION={API Vearsion (eg:2023-03-15-preview)}
+```
+
+### 4. Run the application
+```
+streamlit run app.py
+```
+
+## Deploy to Azure
+### 1. Deploy App Service
 Deploy Python Stack Web Apps
 
-# 2.Deploy this application
+### 2.Deploy this application
 Web Apps > Deployment Center > Setting
 - Source : External Git
-- Repository : https://github.com/07JP27/openai-client
-- Branch : managed-id
+- Repository : https://github.com/07JP27/K-SEC-2023-ChatGPT-Client
+- Branch : main
 - Repository Type : Public
 
 ![image](https://github.com/07JP27/openai-client/assets/11060273/ddb1893c-6384-47a2-bf17-ebe7b90e2139)
 
 And click Save button.
 
-# 3.Set startup command
+### 3.Set startup command
 Web Apps > Configuration > General settings > Startup Command
 
 ```
@@ -31,7 +51,7 @@ python -m streamlit run app.py --server.port 8000 --server.address 0.0.0.0
 
 And click Save button.
  
-# 4. Set up Managed ID
+### 4. Set up Managed ID
 Go to Web Apps > Identity 
 
 Turn on statu and click Save button.
@@ -50,17 +70,18 @@ Finaly, Click Review+assign.
 
 ![2023-06-05_10h58_01](https://github.com/07JP27/openai-client/assets/11060273/2193df82-2a43-48a0-8e76-86d0258b6ad2)
 
-# 5. Set Enviroment variables
+### 5. Set Enviroment variables
 Web Apps > Configuration > Application settings
 
+- USER_NAME : Simple auth username
+- USER_PASS : Simple auth passphrase
 - OPENAI_API_ENDPOINT : Your Azure Open AI API endpoint URL
 - OPENAI_API_VERSION : API Vearsion (2023-03-15-preview)
-- OPENAI_ENGINE : The model name you deployed
 
 ![2023-06-05_11h26_35](https://github.com/07JP27/openai-client/assets/11060273/4c4bd961-3282-41d7-87e7-d96e83fd3dea)
 
 And click Save button.
 
-# Access and Enjoy your private ChatGPT!
+### Access and Enjoy your private ChatGPT!
 If you want to set up authentication to client app, Please refer to following document.
 https://learn.microsoft.com/en-us/azure/app-service/scenario-secure-app-authentication-app-service

@@ -5,9 +5,6 @@ import streamlit as st
 import os
 
 def chat():
-    #ページタイトルとアイコンを設定する。
-    st.set_page_config(page_title="K-SEC 2023 ChatGPT ハンズオンアプリ", page_icon="💬",layout="wide")
-
     #タイトルを表示する。
     st.markdown("## K-SEC 2023 ChatGPT ハンズオンアプリ")
 

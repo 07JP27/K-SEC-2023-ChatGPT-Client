@@ -2,7 +2,7 @@
 
 ![image](/assets/overview.png)
 
-## Local degug
+## Local debug
 ### 1. Prerequisites
 - Install Python 3
 - Clone this repository
